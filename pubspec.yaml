@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+# A build system for Dart code generation and modular compilation.
   build_runner: ^2.4.12
   built_value: ^8.9.2
   built_value_generator: ^8.9.2
@@ -36,6 +37,7 @@ dependencies:
   flutter:
     sdk: flutter
   json_annotation: ^4.9.0
+  # Automatically generate code for converting (to and from) JSON by annotating Dart classes
   json_serializable: ^6.8.0
   retrofit: ^4.2.0
   retrofit_generator: ^8.2.0

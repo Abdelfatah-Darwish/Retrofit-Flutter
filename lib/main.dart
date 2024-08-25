@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:retrofit_flutter/home_screen.dart';
+import 'package:retrofit_flutter/view/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
