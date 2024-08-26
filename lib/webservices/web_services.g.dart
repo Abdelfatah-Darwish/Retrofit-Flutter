@@ -14,7 +14,7 @@ class _Webservices implements Webservices {
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'https://gorest.co.in/public-api/';
+    baseUrl ??= 'https://gorest.co.in/public/v2/';
   }
 
   final Dio _dio;

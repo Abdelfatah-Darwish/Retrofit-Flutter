@@ -4,7 +4,7 @@ import 'package:retrofit_flutter/webservices/web_services.dart';
 class MyRepo {
   final Webservices webservices;
 
-  MyRepo({required this.webservices});
+  MyRepo(this.webservices);
 
   Future<List<User>> getAllUsers() async {
     final response = await webservices.getAllUsers();
@@ -18,8 +18,5 @@ class MyRepo {
       allUser.add(user);
     }
     return allUser;
-
-
-    
   }
 }
