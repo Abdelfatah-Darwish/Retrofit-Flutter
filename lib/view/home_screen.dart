@@ -14,15 +14,12 @@ class _HomeScreenState extends State<HomeScreen> {
   List<User> usersList = [];
   User user = User();
 
-
   @override
   void initState() {
-   
     super.initState();
 
     BlocProvider.of<MyCubit>(context).emitGetAllUsers();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -37,20 +34,23 @@ class _HomeScreenState extends State<HomeScreen> {
               if (state is GetAllUsers) {
                 usersList = (state).allUsersList;
                 return ListView.builder(
-                  shrinkWrap: true,
-                  padding: const EdgeInsets.all(8),
+                   shrinkWrap: true,
+                  padding: const EdgeInsets.all(12),
                   itemCount: usersList.length,
                   itemBuilder: (BuildContext context, int index) {
                     return Container(
+                      decoration: BoxDecoration(
+                          color: Colors.amber,
+                          borderRadius: BorderRadius.circular(12)),
+                      margin: const EdgeInsets.symmetric(vertical: 12),
                       height: 50,
-                      color: Colors.amber,
-                      child:
-                          Center(child: Text(usersList[index].gender.toString())),
+                      child: Center(
+                          child: Text(usersList[index].gender.toString())),
                     );
                   },
                 );
               } else {
-                return const Center( 
+                return const Center(
                   child: CircularProgressIndicator(),
                 );
               }
