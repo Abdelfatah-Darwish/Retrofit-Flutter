@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:retrofit_flutter/cubit/my_cubit.dart';
-import 'package:retrofit_flutter/jsontodartmodel/user.dart';
+import 'package:retrofit_flutter/model/user.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

@@ -1,4 +1,6 @@
-import 'package:retrofit_flutter/jsontodartmodel/user.dart';
+// ignore_for_file: avoid_print
+
+import 'package:retrofit_flutter/model/user.dart';
 import 'package:retrofit_flutter/webservices/web_services.dart';
 
 class MyRepo {
@@ -11,12 +13,13 @@ class MyRepo {
 
     //return response.map((singleUserfromJson) => User.fromJson(singleUserfromJson.toJson())).toList();
 
-    List<User> allUser = [];
+    List<User> allUsersList = [];
     for (var singleUserfromJson in response) {
       User user = User.fromJson(singleUserfromJson.toJson());
 
-      allUser.add(user);
+      allUsersList.add(user);
     }
-    return allUser;
+    //print(allUser);
+    return allUsersList;
   }
 }
