@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: 50,
                       color: Colors.amber,
                       child:
-                          Center(child: Text(usersList[index].id.toString())),
+                          Center(child: Text(usersList[index].gender.toString())),
                     );
                   },
                 );

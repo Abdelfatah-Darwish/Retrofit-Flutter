@@ -9,28 +9,27 @@ final getIt = GetIt.instance;
 void initGetIt() {
   getIt.registerLazySingleton<MyCubit>(() => MyCubit(getIt()));
   getIt.registerLazySingleton<MyRepo>(() => MyRepo(getIt()));
-  getIt.registerLazySingleton<Webservices>(() => Webservices(Dio()));
+  // getIt.registerLazySingleton<Webservices>(() => Webservices(Dio()));
+
+  getIt.registerLazySingleton<Webservices>(
+      () => Webservices(createAndSetupDio()));
 }
-  
-//   getIt.registerLazySingleton<Webservices>(
-//       () => Webservices(createAndSetupDio()));
-// }
 
-// Dio createAndSetupDio() {
-//   Dio dio = Dio();
+Dio createAndSetupDio() {
+  Dio dio = Dio();
 
-//   dio
-//     ..options.connectTimeout = (200 * 1000) as Duration?
-//     ..options.receiveTimeout = (200 * 1000) as Duration?;
+  dio
+    ..options.connectTimeout = const Duration(seconds: 10)
+    ..options.receiveTimeout = const Duration(seconds: 10);
 
-//   dio.interceptors.add(LogInterceptor(
-//     responseBody: true,
-//     error: true,
-//     requestHeader: false,
-//     responseHeader: false,
-//     request: true,
-//     requestBody: true,
-//   ));
+  dio.interceptors.add(LogInterceptor(
+    responseBody: true,
+    error: true,
+    requestHeader: false,
+    responseHeader: false,
+    request: true,
+    requestBody: true,
+  ));
 
-//   return dio;
-// }
+  return dio;
+}
